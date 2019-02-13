@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@EnableFeignClient("com.sir.taxeSoukapi.rest")
 public class TaxeSoukApiApplication {
 
 	public static void main(String[] args) {

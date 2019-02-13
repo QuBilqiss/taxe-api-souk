@@ -6,28 +6,27 @@
 package com.sir.taxeSoukapi.bean;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author user
  */
 @Entity
-public class TauxTrimestriel implements Serializable {
+public class Categorie implements Serializable {
+
+   
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Categorie categorie;
-    private Double pourcentage;
-    private Double penalite;
-    private Double majoration;
-
-
+     private String reference;
     public Long getId() {
         return id;
     }
@@ -36,40 +35,13 @@ public class TauxTrimestriel implements Serializable {
         this.id = id;
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public String getReference() {
+        return reference;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
+    public void setReference(String reference) {
+        this.reference = reference;
     }
-
-  
-    public Double getPourcentage() {
-        return pourcentage;
-    }
-
-    public void setPourcentage(Double pourcentage) {
-        this.pourcentage = pourcentage;
-    }
-
-    public Double getPenalite() {
-        return penalite;
-    }
-
-    public void setPenalite(Double penalite) {
-        this.penalite = penalite;
-    }
-
-    public Double getMajoration() {
-        return majoration;
-    }
-
-    public void setMajoration(Double majoration) {
-        this.majoration = majoration;
-    }
-
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -80,10 +52,10 @@ public class TauxTrimestriel implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TauxTrimestriel)) {
+        if (!(object instanceof Categorie)) {
             return false;
         }
-        TauxTrimestriel other = (TauxTrimestriel) object;
+        Categorie other = (Categorie) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -92,7 +64,7 @@ public class TauxTrimestriel implements Serializable {
 
     @Override
     public String toString() {
-        return "com.sir.taxeSoukapi.bean.TauxTrimestriel[ id=" + id + " ]";
+        return "com.sir.adresseapi.bean.Categorie[ id=" + id + " ]";
     }
     
 }

@@ -25,6 +25,13 @@ public class TaxeTrimestrielle implements Serializable {
     private String refLocal;
     private String refRedevable;
     private Double datePaiment;
+    private Double montantDeBase;
+    private Double montantMajoration;
+    private Double montantPenalité;
+    private Double montantTaxe;
+    private int nbMoisRetard;
+
+
 
     public Long getId() {
         return id;
@@ -56,6 +63,46 @@ public class TaxeTrimestrielle implements Serializable {
 
     public void setDatePaiment(Double datePaiment) {
         this.datePaiment = datePaiment;
+    }
+
+    public Double getMontantDeBase() {
+        return montantDeBase;
+    }
+
+    public void setMontantDeBase(Double montantDeBase) {
+        this.montantDeBase = montantDeBase;
+    }
+
+    public Double getMontantMajoration() {
+        return montantMajoration;
+    }
+
+    public void setMontantMajoration(Double montantMajoration) {
+        this.montantMajoration = montantMajoration;
+    }
+
+    public Double getMontantPenalité() {
+        return montantPenalité;
+    }
+
+    public void setMontantPenalité(Double montantPenalité) {
+        this.montantPenalité = montantPenalité;
+    }
+
+    public Double getMontantTaxe() {
+        return montantTaxe;
+    }
+
+    public void setMontantTaxe(Double montantTaxe) {
+        this.montantTaxe = montantTaxe;
+    }
+
+    public int getNbMoisRetard() {
+        return nbMoisRetard;
+    }
+
+    public void setNbMoisRetard(int nbMoisRetard) {
+        this.nbMoisRetard = nbMoisRetard;
     }
 
     
