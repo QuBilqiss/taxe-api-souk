@@ -11,7 +11,7 @@
 	<groupId>com.sir</groupId>
 	<artifactId>taxe-Souk-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taxe-Souk-api</name>
+	<name>taxe-api-souk</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
