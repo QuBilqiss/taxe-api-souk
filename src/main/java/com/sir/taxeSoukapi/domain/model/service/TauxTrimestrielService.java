@@ -6,12 +6,17 @@
 package com.sir.taxeSoukapi.domain.model.service;
 
 import com.sir.taxeSoukapi.domain.bean.TauxTrimestriel;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author user
  */
 public interface TauxTrimestrielService {
-    public int save(TauxTrimestriel tauxTrimestriel);
-    public TauxTrimestriel findByCategorieReference(String refCategorie);
+    public List<TauxTrimestriel>  findByCategorieReference(String refCategorie);
+    public TauxTrimestriel findByCategorieReferenceByDate(String refCategorie, Date date);
+    public TauxTrimestriel findByCategorieReferenceByDateDebutByDateFin(String refCategorie,Date dateDebut,Date dateFin);
+    public TauxTrimestriel save(TauxTrimestriel tauxTrimestriel);
+    
 }

@@ -12,6 +12,6 @@ import com.sir.taxeSoukapi.domain.bean.TaxeTrimestrielle;
  * @author user
  */
 public interface TaxeTrimestrielleService {
-    public int save(TaxeTrimestrielle taxeAnnuelle);
     public TaxeTrimestrielle findByRefLocal(String refLocal);
+    public TaxeTrimestrielle save(TaxeTrimestrielle taxeTrimestrielle);
 }

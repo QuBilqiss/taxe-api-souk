@@ -26,7 +26,7 @@ public class TaxeAnnuelle implements Serializable {
     private Local local;
     private String refRedevable;
     private Double datePaiment;
-    private List<TaxeTrimestrielle> TaxeTrims;
+    private List<TaxeTrimestrielle> taxeTrimestrielles;
 
     public Long getId() {
         return id;
@@ -61,12 +61,12 @@ public class TaxeAnnuelle implements Serializable {
         this.datePaiment = datePaiment;
     }
 
-    public List<TaxeTrimestrielle> getTaxeTrims() {
-        return TaxeTrims;
+    public List<TaxeTrimestrielle> getTaxeTrimestrielles() {
+        return taxeTrimestrielles;
     }
 
-    public void setTaxeTrims(List<TaxeTrimestrielle> TaxeTrims) {
-        this.TaxeTrims = TaxeTrims;
+    public void setTaxeTrimestrielles(List<TaxeTrimestrielle> taxeTrimestrielles) {
+        this.taxeTrimestrielles = taxeTrimestrielles;
     }
 
     @Override

@@ -15,4 +15,5 @@ import com.sir.taxeSoukapi.domain.bean.Souk;
 public interface SoukService {
     public Souk save(Souk souk);
     public Souk findByReference(String refCategorie);
+    
 }

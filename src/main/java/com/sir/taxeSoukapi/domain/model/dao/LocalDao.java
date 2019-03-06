@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface LocalDao extends JpaRepository<Local, Long>{
-     public List<Local> findByRefRedevable(String reference);
+    public List<Local> findByRefRedevable(String reference);
     public Local findByReference(String reference);
+    public List<Local> findAll();
 }

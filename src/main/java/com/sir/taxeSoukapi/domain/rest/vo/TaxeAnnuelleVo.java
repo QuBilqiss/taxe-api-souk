@@ -5,6 +5,7 @@
  */
 package com.sir.taxeSoukapi.domain.rest.vo;
 
+import com.sir.taxeSoukapi.domain.bean.Local;
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class TaxeAnnuelleVo implements Serializable {
     private Long id;
-    private String refLocal;
+    private Local local;
     private String refRedevable;
     private String datePaiment;
     private List<TaxeTrimestrielleVo> taxeTrimestrielleVos;
@@ -27,12 +28,12 @@ public class TaxeAnnuelleVo implements Serializable {
         this.id = id;
     }
 
-    public String getRefLocal() {
-        return refLocal;
+    public Local getLocal() {
+        return local;
     }
 
-    public void setRefLocal(String refLocal) {
-        this.refLocal = refLocal;
+    public void setLocal(Local local) {
+        this.local = local;
     }
 
     public String getRefRedevable() {

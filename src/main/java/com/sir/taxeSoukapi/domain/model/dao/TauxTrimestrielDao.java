@@ -6,6 +6,8 @@
 package com.sir.taxeSoukapi.domain.model.dao;
 
 import com.sir.taxeSoukapi.domain.bean.TauxTrimestriel;
+import java.util.Date;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TauxTrimestrielDao extends JpaRepository<TauxTrimestriel, Long>{
-    public TauxTrimestriel findByCategorieReference(String refCategorie);
+    public List<TauxTrimestriel>  findByCategorieReference(String refCategorie);
+    public TauxTrimestriel findByCategorieReferenceByDateDebutByDateFin(String refCategorie,Date dateDebut,Date dateFin);
+
 }

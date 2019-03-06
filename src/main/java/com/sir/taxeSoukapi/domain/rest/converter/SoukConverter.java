@@ -6,8 +6,8 @@
 package com.sir.taxeSoukapi.domain.rest.converter;
 
 import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
-import com.sir.taxeSoukapi.domain.bean.Categorie;
-import com.sir.taxeSoukapi.domain.rest.vo.CategorieVo;
+import com.sir.taxeSoukapi.domain.bean.Souk;
+import com.sir.taxeSoukapi.domain.rest.vo.SoukVo;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,17 +15,20 @@ import org.springframework.stereotype.Component;
  * @author user
  */
 @Component
-public class CategorieConverter extends AbstractConverter<Categorie, CategorieVo>{
+public class SoukConverter extends AbstractConverter<Souk, SoukVo>{
 
     @Override
-    public Categorie toItem(CategorieVo vo) {
-         if (vo != null) {
-            Categorie item = new Categorie();
+    public Souk toItem(SoukVo vo) {
+        if (vo != null) {
+            Souk item = new Souk();
             if(vo.getId()!=null){
                 item.setId(vo.getId());
             }
             if (vo.getReference() != null) {
                 item.setReference(vo.getReference());
+            }
+             if(item.getRefRue()!=null){
+                vo.setRefRue(item.getRefRue());
             }
            
             return item;  
@@ -34,14 +37,17 @@ public class CategorieConverter extends AbstractConverter<Categorie, CategorieVo
     }
 
     @Override
-    public CategorieVo toVo(Categorie item) {
+    public SoukVo toVo(Souk item) {
         if (item != null) {
-             CategorieVo vo = new CategorieVo();
+             SoukVo vo = new SoukVo();
             if(item.getId()!=null){
                 vo.setId(item.getId());
             }
             if (item.getReference() != null) {
                 vo.setReference(item.getReference());
+            }
+            if(item.getRefRue()!=null){
+                vo.setRefRue(item.getRefRue());
             }
             
            return vo;

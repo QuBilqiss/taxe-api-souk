@@ -16,5 +16,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SoukDao extends JpaRepository<Souk, Long>{
     public Souk findByReference(String reference);
-    public Souk save(Souk souk);
 }

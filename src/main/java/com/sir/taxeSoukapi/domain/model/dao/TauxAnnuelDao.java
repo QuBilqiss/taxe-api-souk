@@ -6,6 +6,8 @@
 package com.sir.taxeSoukapi.domain.model.dao;
 
 import com.sir.taxeSoukapi.domain.bean.TauxAnnuel;
+import java.util.Date;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +17,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TauxAnnuelDao extends JpaRepository<TauxAnnuel, Long>{
-    public TauxAnnuel findByCategorieReference(String refCategorie);
-    public TauxAnnuel save(TauxAnnuel tauxAnnuel);
-    
+    public List<TauxAnnuel> findByCategorieReference(String refCategorie);
+    public TauxAnnuel findByCategorieReferenceByDateDebutByDateFin(String refCategorie,Date dateDebut,Date dateFin);
 }

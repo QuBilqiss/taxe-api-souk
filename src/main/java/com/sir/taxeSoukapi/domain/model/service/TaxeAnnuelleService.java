@@ -12,6 +12,6 @@ import com.sir.taxeSoukapi.domain.bean.TaxeAnnuelle;
  * @author user
  */
 public interface TaxeAnnuelleService {
-    public int save(TaxeAnnuelle taxeAnnuelle);
-    public TaxeAnnuelle findByRefLocal(String refLocal);
+   public TaxeAnnuelle findByRefLocal(String refLocal);
+    public TaxeAnnuelle save(TaxeAnnuelle taxeAnnuelle);
 }

@@ -6,12 +6,16 @@
 package com.sir.taxeSoukapi.domain.model.service;
 
 import com.sir.taxeSoukapi.domain.bean.TauxAnnuel;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author user
  */
 public interface TauxAnnuelService {
-    public int save(TauxAnnuel tauxAnnuel);
-    public TauxAnnuel findByRefCategorie(String refCategorie);
+    public List<TauxAnnuel> findByCategorieReference(String refCategorie);
+    public TauxAnnuel findByCategorieReferenceByDate(String refCategorie, Date date);
+    public TauxAnnuel findByCategorieReferenceByDateDebutByDateFin(String refCategorie,Date dateDebut,Date dateFin);
+    public TauxAnnuel save(TauxAnnuel tauxAnnuel);
 }

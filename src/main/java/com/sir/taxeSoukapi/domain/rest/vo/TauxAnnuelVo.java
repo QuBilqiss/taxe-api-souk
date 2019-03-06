@@ -18,7 +18,7 @@ import javax.persistence.Id;
  */
 public class TauxAnnuelVo implements Serializable {
     private Long id;
-    private String refCategorie;
+    private CategorieVo categorieVo;
     private String dateDebut;
     private String dateFin;
     private String pourcentage;
@@ -33,12 +33,12 @@ public class TauxAnnuelVo implements Serializable {
         this.id = id;
     }
 
-    public String getRefCategorie() {
-        return refCategorie;
+    public CategorieVo getCategorieVo() {
+        return categorieVo;
     }
 
-    public void setRefCategorie(String refCategorie) {
-        this.refCategorie = refCategorie;
+    public void setCategorieVo(CategorieVo categorieVo) {
+        this.categorieVo = categorieVo;
     }
 
     public String getDateDebut() {

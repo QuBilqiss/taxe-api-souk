@@ -32,7 +32,7 @@ public class Local implements Serializable {
     private Double dernierMontantPaye ;
     private Double dernierTrimestrePaye ;
     private Double dernierAnneePaye ;
-    private String refCategorie;
+    private Categorie categorie;
 
     public Long getId() {
         return id;
@@ -106,12 +106,12 @@ public class Local implements Serializable {
         this.dernierAnneePaye = dernierAnneePaye;
     }
 
-    public String getRefCategorie() {
-        return refCategorie;
+    public Categorie getCategorie() {
+        return categorie;
     }
 
-    public void setRefCategorie(String refCategorie) {
-        this.refCategorie = refCategorie;
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 
     @Override
