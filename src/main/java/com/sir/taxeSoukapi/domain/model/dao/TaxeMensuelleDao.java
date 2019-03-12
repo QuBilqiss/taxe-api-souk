@@ -5,7 +5,8 @@
  */
 package com.sir.taxeSoukapi.domain.model.dao;
 
-import com.sir.taxeSoukapi.domain.bean.TaxeTrimestrielle;
+import com.sir.taxeSoukapi.domain.bean.TaxeMensuelle;
+import java.util.Date;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,8 @@ import org.springframework.stereotype.Repository;
  * @author user
  */
 @Repository
-public interface taxeTrimestrielleDao extends JpaRepository<TaxeTrimestrielle, Long>{
-    public TaxeTrimestrielle findByRefLocal(String refLocal);
-    public TaxeTrimestrielle save(TaxeTrimestrielle taxeTrimestrielle);
+public interface TaxeMensuelleDao extends JpaRepository<TaxeMensuelle, Long>{
+    public TaxeMensuelle findByLocalReference(String refLocal);
+    public TaxeMensuelle save(TaxeMensuelle taxeTrimestrielle);
+    public TaxeMensuelle findByLocalReferenceAndDatePaiment(String reference,Date date);
 }

@@ -26,12 +26,13 @@ public class Local implements Serializable {
     private String reference;
     private Double surface;
     private String refRedevable;
-    private String refproprietaire;
+    private String refProprietaire;
     @ManyToOne
     private Souk souk;
     private Double dernierMontantPaye ;
     private Double dernierTrimestrePaye ;
     private Double dernierAnneePaye ;
+    @ManyToOne
     private Categorie categorie;
 
     public Long getId() {
@@ -66,12 +67,12 @@ public class Local implements Serializable {
         this.refRedevable = refRedevable;
     }
 
-    public String getRefproprietaire() {
-        return refproprietaire;
+    public String getRefProprietaire() {
+        return refProprietaire;
     }
 
-    public void setRefproprietaire(String refproprietaire) {
-        this.refproprietaire = refproprietaire;
+    public void setRefProprietaire(String refProprietaire) {
+        this.refProprietaire = refProprietaire;
     }
 
     public Souk getSouk() {

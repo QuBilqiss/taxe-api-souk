@@ -5,7 +5,6 @@
  */
 package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
 import com.sir.taxeSoukapi.domain.bean.Local;
 import com.sir.taxeSoukapi.domain.bean.TaxeAnnuelle;
 import com.sir.taxeSoukapi.domain.rest.vo.TaxeAnnuelleVo;
@@ -26,8 +25,8 @@ public class TaxeAnnuelleConverter extends AbstractConverter<TaxeAnnuelle, TaxeA
                 item.setId(vo.getId());
             }
           
-             if(vo.getLocal()!=null){
-                item.setLocal(new LocalConverter().toItem(vo.getLocal()));
+             if(vo.getLocalVo()!=null){
+                item.setLocal(new LocalConverter().toItem(vo.getLocalVo()));
             }
 //            if (vo.getDatePaiment()!= null) {
 //                item.setReference(vo.getReference());
@@ -51,7 +50,7 @@ public class TaxeAnnuelleConverter extends AbstractConverter<TaxeAnnuelle, TaxeA
             }
           
              if(item.getLocal()!=null){
-                vo.setLocal(new LocalConverter().toVo(item.getLocal()));
+                vo.setLocalVo(new LocalConverter().toVo(item.getLocal()));
             }
 //            if (vo.getDatePaiment()!= null) {
 //                item.set(vo.getReference());

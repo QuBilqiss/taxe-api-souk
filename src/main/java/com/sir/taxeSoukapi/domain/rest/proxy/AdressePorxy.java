@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  *
  * @author user
  */
-@FeignClient(name = "microservice-adresse", url = "localhost:8090")
+//@FeignClient(name = "microservice-adresse", url = "localhost:8090")
 public class AdressePorxy {
     
 }

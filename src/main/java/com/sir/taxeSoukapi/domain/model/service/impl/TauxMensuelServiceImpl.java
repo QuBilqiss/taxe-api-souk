@@ -5,38 +5,38 @@
  */
 package com.sir.taxeSoukapi.domain.model.service.impl;
 
-import com.sir.taxeSoukapi.domain.bean.TauxTrimestriel;
-import com.sir.taxeSoukapi.domain.model.dao.TauxTrimestrielDao;
-import com.sir.taxeSoukapi.domain.model.service.TauxTrimestrielService;
+import com.sir.taxeSoukapi.domain.bean.TauxMensuel;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.sir.taxeSoukapi.domain.model.dao.TauxMensuelDao;
+import com.sir.taxeSoukapi.domain.model.service.TauxMensuelService;
 
 /**
  *
  * @author user
  */
 @Service
-public class TauxTrimestrielServiceImpl implements TauxTrimestrielService{
+public class TauxMensuelServiceImpl implements TauxMensuelService{
 
     @Autowired 
-    TauxTrimestrielDao tauxTrimestrielDao;
+    TauxMensuelDao tauxTrimestrielDao;
     
     @Override
-    public List<TauxTrimestriel>  findByCategorieReference(String refCategorie) {
+    public List<TauxMensuel>  findByCategorieReference(String refCategorie) {
         return tauxTrimestrielDao.findByCategorieReference(refCategorie);
     }
 
     @Override
-    public TauxTrimestriel findByCategorieReferenceByDate(String refCategorie, Date date) {
+    public TauxMensuel findByCategorieReferenceByDate(String refCategorie, Date date) {
                //        String query ="select t from TauxTrimestriel t where t.categorie.reference='"+refCategorie+"'and t.dateDebut.compareTo('"+date+"')<=0 and t.dateFint.compareTo('"+date+"')>=0";
 //        return getSingleResult(query);
-        List<TauxTrimestriel> tauxTrimestriels=findByCategorieReference(refCategorie);
+        List<TauxMensuel> tauxTrimestriels=findByCategorieReference(refCategorie);
         if(tauxTrimestriels==null || tauxTrimestriels.isEmpty()){
             return null;
         }else{
-            for (TauxTrimestriel tauxTrimestriel : tauxTrimestriels) {
+            for (TauxMensuel tauxTrimestriel : tauxTrimestriels) {
                 if(tauxTrimestriel.getDateDebut().compareTo(date)<=0 && tauxTrimestriel.getDateFin().compareTo(date)>=0){
                     return tauxTrimestriel;
                 }
@@ -46,12 +46,12 @@ public class TauxTrimestrielServiceImpl implements TauxTrimestrielService{
     }
 
     @Override
-    public TauxTrimestriel findByCategorieReferenceByDateDebutByDateFin(String refCategorie, Date dateDebut, Date dateFin) {
-        return tauxTrimestrielDao.findByCategorieReferenceByDateDebutByDateFin(refCategorie, dateDebut, dateFin);
+    public TauxMensuel findByCategorieReferenceByDateDebutByDateFin(String refCategorie, Date dateDebut, Date dateFin) {
+        return tauxTrimestrielDao.findByCategorieReferenceAndDateDebutAndDateFin(refCategorie, dateDebut, dateFin);
     }
 
     @Override
-    public TauxTrimestriel save(TauxTrimestriel tauxTrimestriel) {
+    public TauxMensuel save(TauxMensuel tauxTrimestriel) {
         if(findByCategorieReferenceByDateDebutByDateFin(tauxTrimestriel.getCategorie().getReference(),tauxTrimestriel.getDateDebut(),tauxTrimestriel.getDateFin())!=null){
             return null;
         }else{
@@ -60,12 +60,27 @@ public class TauxTrimestrielServiceImpl implements TauxTrimestrielService{
         }
     }
   
+    @Override
+    public TauxMensuel findByCategorieReferenceAndDate(String reference, Date date) {
+        List<TauxMensuel>  tauxTrimestriels=findByCategorieReference(reference);
+        if(tauxTrimestriels==null || tauxTrimestriels.isEmpty()){
+            return null;
+        }else{
+             for (TauxMensuel tauxTrimestriel : tauxTrimestriels) {
+                if(tauxTrimestriel.getDateDebut().compareTo(date)<=0 && tauxTrimestriel.getDateFin().compareTo(date)>=0){
+                    return tauxTrimestriel;
+                }
+            }
+             return null;
+        }
+    }
+
    
-    public TauxTrimestrielDao getTauxTrimestrielDao() {
+    public TauxMensuelDao getTauxTrimestrielDao() {
         return tauxTrimestrielDao;
     }
 
-    public void setTauxTrimestrielDao(TauxTrimestrielDao tauxTrimestrielDao) {
+    public void setTauxTrimestrielDao(TauxMensuelDao tauxTrimestrielDao) {
         this.tauxTrimestrielDao = tauxTrimestrielDao;
     }
 

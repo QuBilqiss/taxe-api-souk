@@ -6,6 +6,7 @@
 package com.sir.taxeSoukapi.domain.model.dao;
 
 import com.sir.taxeSoukapi.domain.bean.TaxeAnnuelle;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TaxeAnnuelleDao extends JpaRepository<TaxeAnnuelle, Long>{
-    public TaxeAnnuelle findByRefLocal(String refLocal);
+//     public List<TaxeAnnuelle> findByLocalReference(String reLocal);    
 }

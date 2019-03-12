@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,9 +25,11 @@ public class TaxeAnnuelle implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Local local;
+    private Categorie categorie;
     private String refRedevable;
     private Double datePaiment;
-    private List<TaxeTrimestrielle> taxeTrimestrielles;
+    @OneToMany(mappedBy = "taxeAnnuelle")
+    private List<TaxeMensuelle> taxeTrimestrielles;
 
     public Long getId() {
         return id;
@@ -44,6 +47,13 @@ public class TaxeAnnuelle implements Serializable {
         this.local = local;
     }
 
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
 
     public String getRefRedevable() {
         return refRedevable;
@@ -61,11 +71,11 @@ public class TaxeAnnuelle implements Serializable {
         this.datePaiment = datePaiment;
     }
 
-    public List<TaxeTrimestrielle> getTaxeTrimestrielles() {
+    public List<TaxeMensuelle> getTaxeTrimestrielles() {
         return taxeTrimestrielles;
     }
 
-    public void setTaxeTrimestrielles(List<TaxeTrimestrielle> taxeTrimestrielles) {
+    public void setTaxeTrimestrielles(List<TaxeMensuelle> taxeTrimestrielles) {
         this.taxeTrimestrielles = taxeTrimestrielles;
     }
 

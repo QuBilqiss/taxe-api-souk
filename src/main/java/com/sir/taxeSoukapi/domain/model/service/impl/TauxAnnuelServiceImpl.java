@@ -45,7 +45,7 @@ public class TauxAnnuelServiceImpl implements TauxAnnuelService{
     
     @Override
     public TauxAnnuel findByCategorieReferenceByDateDebutByDateFin(String refCategorie, Date dateDebut, Date dateFin) {
-        return tauxAnnuelDao.findByCategorieReferenceByDateDebutByDateFin(refCategorie, dateDebut, dateFin);
+        return tauxAnnuelDao.findByCategorieReferenceAndDateDebutAndDateFin(refCategorie, dateDebut, dateFin);
     }
     
     @Override

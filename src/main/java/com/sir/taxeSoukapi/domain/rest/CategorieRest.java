@@ -21,10 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @author user
  */
 @RestController
-@RequestMapping({"/adresse-api/categorie"})
+@RequestMapping({"/taxe-api-souk/categorie"})
 public class CategorieRest {
     @Autowired
     CategorieService categorieService;
+  
 
     @GetMapping("/reference/{reference}")
     public Categorie findByReference(@PathVariable String reference) {
@@ -38,6 +39,8 @@ public class CategorieRest {
     public List<Categorie> findAll() {
         return categorieService.findAll();
     }
+
+   
 
     public CategorieService getCategorieService() {
         return categorieService;

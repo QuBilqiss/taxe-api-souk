@@ -13,8 +13,8 @@ import java.util.List;
  * @author user
  */
 public  interface CategorieService {
+    
         public Categorie findByReference(String reference);
         public int creer(Categorie categorie);
          public List<Categorie> findAll();
-         public boolean existsById(Long id);
 }

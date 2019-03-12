@@ -5,7 +5,7 @@
  */
 package com.sir.taxeSoukapi.domain.model.dao;
 
-import com.sir.taxeSoukapi.domain.bean.TauxTrimestriel;
+import com.sir.taxeSoukapi.domain.bean.TauxMensuel;
 import java.util.Date;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,8 +16,9 @@ import org.springframework.stereotype.Repository;
  * @author user
  */
 @Repository
-public interface TauxTrimestrielDao extends JpaRepository<TauxTrimestriel, Long>{
-    public List<TauxTrimestriel>  findByCategorieReference(String refCategorie);
-    public TauxTrimestriel findByCategorieReferenceByDateDebutByDateFin(String refCategorie,Date dateDebut,Date dateFin);
+public interface TauxMensuelDao extends JpaRepository<TauxMensuel, Long>{
+    
+    public List<TauxMensuel>  findByCategorieReference(String refCategorie);//dozi 3la dao o 7yedi dik By By o diri And And ok
+    public TauxMensuel findByCategorieReferenceAndDateDebutAndDateFin(String refCategorie,Date dateDebut,Date dateFin);
 
 }

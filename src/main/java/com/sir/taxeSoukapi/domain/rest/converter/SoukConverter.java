@@ -5,7 +5,6 @@
  */
 package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
 import com.sir.taxeSoukapi.domain.bean.Souk;
 import com.sir.taxeSoukapi.domain.rest.vo.SoukVo;
 import org.springframework.stereotype.Component;

@@ -11,21 +11,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author user
  */
 @Entity
-public class TauxTrimestriel implements Serializable {
+public class TauxMensuel implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne
     private Categorie categorie;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateFin;
-    private Date dateDebut;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dateDebut; // wikiiii wikkkk khasekom l3esssaaaaaa
     private Double pourcentage;
     private Double penalite;
     private Double majoration;
@@ -99,10 +104,10 @@ public class TauxTrimestriel implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TauxTrimestriel)) {
+        if (!(object instanceof TauxMensuel)) {
             return false;
         }
-        TauxTrimestriel other = (TauxTrimestriel) object;
+        TauxMensuel other = (TauxMensuel) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

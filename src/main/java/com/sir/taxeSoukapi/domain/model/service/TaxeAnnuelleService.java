@@ -6,12 +6,13 @@
 package com.sir.taxeSoukapi.domain.model.service;
 
 import com.sir.taxeSoukapi.domain.bean.TaxeAnnuelle;
+import java.util.List;
 
 /**
  *
  * @author user
  */
 public interface TaxeAnnuelleService {
-   public TaxeAnnuelle findByRefLocal(String refLocal);
-    public TaxeAnnuelle save(TaxeAnnuelle taxeAnnuelle);
+//   public List<TaxeAnnuelle> findByLocalReference(String reference);
+//    public TaxeAnnuelle save(TaxeAnnuelle taxeAnnuelle);
 }

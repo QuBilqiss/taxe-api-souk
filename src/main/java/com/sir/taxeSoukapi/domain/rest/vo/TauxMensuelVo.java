@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author user
  */
-public class TauxTrimestrielVo implements Serializable {
+public class TauxMensuelVo implements Serializable {
     private Long id;
     private CategorieVo categorieVo;
     private String dateFin;

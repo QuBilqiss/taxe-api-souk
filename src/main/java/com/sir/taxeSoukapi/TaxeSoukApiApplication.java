@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("com.sir.taxeSoukapi.rest")
+//@EnableFeignClients("com.sir.taxeSoukapi.rest")
 public class TaxeSoukApiApplication {
 
 	public static void main(String[] args) {

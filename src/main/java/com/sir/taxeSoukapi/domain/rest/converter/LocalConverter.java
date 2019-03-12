@@ -1,10 +1,8 @@
+package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
+
 import com.sir.taxeSoukapi.common.util.NumberUtil;
-import com.sir.taxeSoukapi.domain.bean.Categorie;
 import com.sir.taxeSoukapi.domain.bean.Local;
-import com.sir.taxeSoukapi.domain.rest.converter.CategorieConverter;
-import com.sir.taxeSoukapi.domain.rest.converter.SoukConverter;
 import com.sir.taxeSoukapi.domain.rest.vo.LocalVo;
 import org.springframework.stereotype.Component;
 

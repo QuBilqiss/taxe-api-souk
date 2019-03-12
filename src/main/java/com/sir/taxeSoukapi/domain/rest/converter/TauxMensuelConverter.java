@@ -5,10 +5,9 @@
  */
 package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
 import com.sir.taxeSoukapi.common.util.NumberUtil;
-import com.sir.taxeSoukapi.domain.bean.TauxTrimestriel;
-import com.sir.taxeSoukapi.domain.rest.vo.TauxTrimestrielVo;
+import com.sir.taxeSoukapi.domain.bean.TauxMensuel;
+import com.sir.taxeSoukapi.domain.rest.vo.TauxMensuelVo;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,12 +15,12 @@ import org.springframework.stereotype.Component;
  * @author user
  */
 @Component
-public class TauxTrimestrielConverter extends AbstractConverter<TauxTrimestriel, TauxTrimestrielVo>{
+public class TauxMensuelConverter extends AbstractConverter<TauxMensuel, TauxMensuelVo>{
 
     @Override
-    public TauxTrimestriel toItem(TauxTrimestrielVo vo) {
+    public TauxMensuel toItem(TauxMensuelVo vo) {
           if (vo != null) {
-            TauxTrimestriel item = new TauxTrimestriel();
+            TauxMensuel item = new TauxMensuel();
             if(vo.getId()!=null){
                 item.setId(vo.getId());
             }
@@ -51,9 +50,9 @@ public class TauxTrimestrielConverter extends AbstractConverter<TauxTrimestriel,
     }
 
     @Override
-    public TauxTrimestrielVo toVo(TauxTrimestriel item) {
+    public TauxMensuelVo toVo(TauxMensuel item) {
            if (item != null) {
-            TauxTrimestrielVo vo = new TauxTrimestrielVo();
+            TauxMensuelVo vo = new TauxMensuelVo();
             if(item.getId()!=null){
                 vo.setId(item.getId());
             }

@@ -5,7 +5,6 @@
  */
 package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
 import com.sir.taxeSoukapi.common.util.NumberUtil;
 import com.sir.taxeSoukapi.domain.bean.TauxAnnuel;
 import com.sir.taxeSoukapi.domain.rest.vo.TauxAnnuelVo;

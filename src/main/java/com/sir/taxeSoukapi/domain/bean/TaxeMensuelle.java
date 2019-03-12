@@ -6,31 +6,40 @@
 package com.sir.taxeSoukapi.domain.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author user
  */
 @Entity
-public class TaxeTrimestrielle implements Serializable {
+public class TaxeMensuelle implements Serializable {
 
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne
     private Local local;
-    private String refRedevable;
-    private Double datePaiment;
-    private Double datePresentation;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date datePaiment;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date datePresentation;
     private Double montantDeBase;
     private Double montantMajoration;
     private Double montantPenalité;
     private Double montantTaxe;
     private int nbMoisRetard;
+    @ManyToOne
+    private TaxeAnnuelle taxeAnnuelle;
+
 
 
 
@@ -50,27 +59,19 @@ public class TaxeTrimestrielle implements Serializable {
         this.local = local;
     }
 
-    public String getRefRedevable() {
-        return refRedevable;
-    }
-
-    public void setRefRedevable(String refRedevable) {
-        this.refRedevable = refRedevable;
-    }
-
-    public Double getDatePaiment() {
+    public Date getDatePaiment() {
         return datePaiment;
     }
 
-    public void setDatePaiment(Double datePaiment) {
+    public void setDatePaiment(Date datePaiment) {
         this.datePaiment = datePaiment;
     }
 
-    public Double getDatePresentation() {
+    public Date getDatePresentation() {
         return datePresentation;
     }
 
-    public void setDatePresentation(Double datePresentation) {
+    public void setDatePresentation(Date datePresentation) {
         this.datePresentation = datePresentation;
     }
 
@@ -114,6 +115,15 @@ public class TaxeTrimestrielle implements Serializable {
         this.nbMoisRetard = nbMoisRetard;
     }
 
+    public TaxeAnnuelle getTaxeAnnuelle() {
+        return taxeAnnuelle;
+    }
+
+    public void setTaxeAnnuelle(TaxeAnnuelle taxeAnnuelle) {
+        this.taxeAnnuelle = taxeAnnuelle;
+    }
+    
+
     
     @Override
     public int hashCode() {
@@ -125,10 +135,10 @@ public class TaxeTrimestrielle implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TaxeTrimestrielle)) {
+        if (!(object instanceof TaxeMensuelle)) {
             return false;
         }
-        TaxeTrimestrielle other = (TaxeTrimestrielle) object;
+        TaxeMensuelle other = (TaxeMensuelle) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

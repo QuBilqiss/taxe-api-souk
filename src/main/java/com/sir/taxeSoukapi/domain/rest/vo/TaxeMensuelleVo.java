@@ -11,10 +11,9 @@ import java.io.Serializable;
  *
  * @author user
  */
-public class TaxeTrimestrielleVo implements Serializable {
+public class TaxeMensuelleVo implements Serializable {
     private Long id;
     private LocalVo localVo;
-    private String refRedevable;
     private String datePaiment;
     private String datePresentation;
     private String montantDeBase;
@@ -37,14 +36,6 @@ public class TaxeTrimestrielleVo implements Serializable {
 
     public void setLocalVo(LocalVo localVo) {
         this.localVo = localVo;
-    }
-
-    public String getRefRedevable() {
-        return refRedevable;
-    }
-
-    public void setRefRedevable(String refRedevable) {
-        this.refRedevable = refRedevable;
     }
 
     public String getDatePaiment() {

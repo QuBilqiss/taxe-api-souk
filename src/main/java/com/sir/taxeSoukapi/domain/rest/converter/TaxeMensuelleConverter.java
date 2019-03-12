@@ -5,10 +5,11 @@
  */
 package com.sir.taxeSoukapi.domain.rest.converter;
 
-import com.sir.adresseapi.domain.rest.converter.AbstractConverter;
+import com.sir.taxeSoukapi.common.util.DateUtil;
 import com.sir.taxeSoukapi.common.util.NumberUtil;
-import com.sir.taxeSoukapi.domain.bean.TaxeTrimestrielle;
-import com.sir.taxeSoukapi.domain.rest.vo.TaxeTrimestrielleVo;
+import com.sir.taxeSoukapi.domain.bean.TaxeMensuelle;
+import com.sir.taxeSoukapi.domain.rest.vo.TaxeMensuelleVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,12 +17,15 @@ import org.springframework.stereotype.Component;
  * @author user
  */
 @Component
-public class TaxeTrimestrielleConverter extends AbstractConverter<TaxeTrimestrielle, TaxeTrimestrielleVo>{
+public class TaxeMensuelleConverter extends AbstractConverter<TaxeMensuelle, TaxeMensuelleVo>{
+    
+     @Autowired              
+     DateUtil dateUtil;
 
     @Override
-    public TaxeTrimestrielle toItem(TaxeTrimestrielleVo vo) {
+    public TaxeMensuelle toItem(TaxeMensuelleVo vo) {
    if (vo != null) {
-            TaxeTrimestrielle item = new TaxeTrimestrielle();
+            TaxeMensuelle item = new TaxeMensuelle();
             if(vo.getId()!=null){
                 item.setId(vo.getId());
             }
@@ -29,9 +33,12 @@ public class TaxeTrimestrielleConverter extends AbstractConverter<TaxeTrimestrie
              if(vo.getLocalVo()!=null){
                 item.setLocal(new LocalConverter().toItem(vo.getLocalVo()));
             }
-//            if (vo.getDatePaiment()!= null) {
-//                item.setReference(vo.getReference());
-//            }
+            if (vo.getDatePaiment()!= null) {
+                item.setDatePaiment(dateUtil.parseCommandeStyle( vo.getDatePaiment()));
+            }
+             if (vo.getDatePresentation()!= null) {
+                item.setDatePresentation(dateUtil.parseCommandeStyle( vo.getDatePresentation()));
+            }
             if (vo.getMontantDeBase()!= null) {
                 item.setMontantDeBase(NumberUtil.toDouble(vo.getMontantDeBase()));
             }
@@ -51,22 +58,25 @@ public class TaxeTrimestrielleConverter extends AbstractConverter<TaxeTrimestrie
     }
 
     @Override
-    public TaxeTrimestrielleVo toVo(TaxeTrimestrielle item) {
+    public TaxeMensuelleVo toVo(TaxeMensuelle item) {
         if (item != null) {
-            TaxeTrimestrielleVo vo = new TaxeTrimestrielleVo();
+            TaxeMensuelleVo vo = new TaxeMensuelleVo();
             if(item.getId()!=null){
                 vo.setId(item.getId());
             }
           
              if(item.getLocal()!=null){
-                vo.setLocal(new LocalConverter().toVo(item.getLocal()));
+                vo.setLocalVo(new LocalConverter().toVo(item.getLocal()));
             }
-//            if (vo.getDatePaiment()!= null) {
-//                item.set(vo.getReference());
-//            }if(datepresentation)
-            if (item.getRefRedevable()!= null) {
-                vo.setRefRedevable(item.getRefRedevable());
+          if (item.getDatePaiment()!= null) {
+               
+                vo.setDatePaiment(dateUtil.formatCommandeStyle(item.getDatePaiment()));
             }
+            if (item.getDatePresentation()!= null) {
+               
+                vo.setDatePresentation(dateUtil.formatCommandeStyle(item.getDatePresentation()));
+            }
+     
             if (item.getMontantDeBase()!= null) {
                 vo.setMontantDeBase(NumberUtil.doubleToString(item.getMontantDeBase()));
             }

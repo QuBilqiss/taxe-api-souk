@@ -49,11 +49,4 @@ public class CategorieServiceImpl implements CategorieService{
         this.categoriedao = categoriedao;
     }
 
-    @Override
-    public boolean existsById(Long id) {
-       return categoriedao.existsById(id);
-    }
-
-  
-   
 }
